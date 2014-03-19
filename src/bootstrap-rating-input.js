@@ -66,8 +66,9 @@
         '</div>'].join('');
 
       // Replace original inputs HTML with the new one
-      originalInput.replaceWith($(el).append(newInput));
-
+      if(!originalInput.parents('.rating-input').length){
+        originalInput.replaceWith($(el).append(newInput));
+      }
     }
 
     // Give live to the newly generated widgets
